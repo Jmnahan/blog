@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to articles_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -37,8 +37,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(article_params)
-    redirect_to articles_path
+    if @article.update(article_params)
+      redirect_to articles_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def delete

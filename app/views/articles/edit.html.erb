@@ -27,5 +27,5 @@
 
 <% end %>
 
-<%= link_to 'Delete Article', articles_delete_path, method: :delete %>
-<%= link_to 'All Articles', articles_path(@articles) %>
+<%= link_to 'Delete Article', articles_delete_path(@article), data: {turbo_method: :delete, turbo_confirm: 'are you sure?'} %>
+<%= link_to 'All Articles', articles_path %>
