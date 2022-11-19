@@ -1,0 +1,31 @@
+<%= form_with scope: :article, url: patch_article_path, method: :patch, local: true do |f| %>
+
+<p>
+  <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Delete Article', articles_delete_path, method: :delete %>
+<%= link_to 'All Articles', articles_path(@articles) %>

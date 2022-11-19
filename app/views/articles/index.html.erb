@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th> 
+      <th>Name</th> 
+      <th>Body</th> 
+      <th>Edit</th> 
+      <th>Read</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.id %> </td>
+        <td><%= article.name %> </td>
+        <td><%= article.body %> </td>
+        <td><%= link_to 'Edit article', edit_article_path(article) %> </td>
+        <td><%= link_to 'Read article', show_article_path(article) %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Article', new_article_path %>
