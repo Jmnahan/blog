@@ -1,0 +1,28 @@
+<%= form_for article, url: url, method: method do |f| %>
+
+<p>
+  <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

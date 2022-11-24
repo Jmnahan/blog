@@ -1,3 +1,6 @@
+  <% if @articles.empty? %>
+    No current articles
+    <% else %>
 <table>
   <thead>
     <tr>
@@ -6,6 +9,7 @@
       <th>Body</th> 
       <th>Edit</th> 
       <th>Read</th> 
+      <th>Link</th> 
     </tr>
   </thead>
 
@@ -17,9 +21,11 @@
         <td><%= article.body %> </td>
         <td><%= link_to 'Edit article', edit_article_path(article) %> </td>
         <td><%= link_to 'Read article', show_article_path(article) %> </td>
+        <td><%= link_to article.to_s, show_article_path(article) %> </td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'Create new article?', new_article_path %>
