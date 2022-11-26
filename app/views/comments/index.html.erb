@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Body</th>
+      <th>Edit</th>
+      <th>Read</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render "comments" %>
+  </tbody>
+</table>
+
+<%= link_to "Add comment", new_article_comment_path(@article) %>
+<%= link_to 'All Articles', articles_path(@articles) %>

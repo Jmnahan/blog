@@ -1,0 +1,7 @@
+<p>
+<%= @comment.id %>
+<%= @comment.body %>
+</p>
+
+<td><%= link_to 'Comments', article_comments_path(@article) %> </td>
+<td><%= link_to 'Back', show_article_path(@article) %> </td>

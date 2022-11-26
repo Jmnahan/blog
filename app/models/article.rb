@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  has_many :comments
   def to_s
     self.id
   end

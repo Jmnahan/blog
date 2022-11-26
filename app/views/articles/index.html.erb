@@ -10,6 +10,7 @@
       <th>Edit</th> 
       <th>Read</th> 
       <th>Link</th> 
+      <th>Comments</th> 
     </tr>
   </thead>
 
@@ -19,9 +20,10 @@
         <td><%= article.id %> </td>
         <td><%= article.name %> </td>
         <td><%= article.body %> </td>
-        <td><%= link_to 'Edit article', edit_article_path(article) %> </td>
-        <td><%= link_to 'Read article', show_article_path(article) %> </td>
+        <td><%= link_to 'Edit', edit_article_path(article) %> </td>
+        <td><%= link_to 'Read', show_article_path(article) %> </td>
         <td><%= link_to article.to_s, show_article_path(article) %> </td>
+        <td><%= link_to 'Comments', article_comments_path(article) %> </td>
       </tr>
     <% end %>
     <% end %>

@@ -1,0 +1,20 @@
+<%= form_with model: [@article, @comment], local: true do |f| %>
+<p>
+  <% if @comment.errors.any? %>
+    <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :body %><br>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

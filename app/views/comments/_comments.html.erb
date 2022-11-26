@@ -1,0 +1,9 @@
+<% @comments.each do |comment| %>
+  <tr>
+    <th><%= comment.id %></th>
+    <th><%= comment.body %></th>
+    <th><%= link_to 'Edit', edit_article_comment_path(@article, comment) %></th>
+    <th><%= link_to 'Read', article_comment_path(@article, comment) %></th>
+    <th><%= link_to 'Delete', article_comment_path(@article, comment), method: :delete, data: {turbo_method: :delete, turbo_confirm: 'are you sure?'} %></th>
+  </tr>
+<% end %>
